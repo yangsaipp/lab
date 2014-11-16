@@ -35,6 +35,7 @@
 	如果合并的时候产生了冲突，git会告诉我们在哪个文件上产生了冲突（git status也会告诉我们冲突的文件），必须手动解决冲突后在提交。
 	补充：
 	--no-ff参数表示禁止使用Fast forward模式合并，应为本次合并要创建一个新的commit，所以要加入-m，将commit描写写进去。
+	--squash 只对分支进行合并，合并的分支提交log将会合并成一个commit log (运行git merge --squash 后需要在运行git commit -m ‘message’)，这里需要根据合并分支是否需要保留提交记录进行使用
 13、git reset HEAD <filename>：把暂存区中对filename的修改撤销掉（此步是把修改从暂存区撤销到工作区，要想撤销工作区的修改，要进一步的使用git checkout -- <filename> 		命令）如果修改已经提交到版本库中了，在没有把本地版本推送到远程的情况下可以使用git reset --hard <commit_id>命令进行版本回退了。
 14、git rm <filename>：在暂存区记录下要删除文件filename，使用git commit命令提交删除申请，从版本库中删除文件。
 15、ssh-keygen -t rsa -C "youremail@example.com"：使用自己的邮件在用户主目录下生成SSH key。（要在主目录下运行此命令）
